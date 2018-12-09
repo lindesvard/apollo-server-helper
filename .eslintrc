@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+   "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "rules": {
+    "comma-dangle": [2,"always-multiline"],
+    "no-extra-semi": 2,
+    "semi": [2, "never"],
+    "no-else-return": 2,
+    "array-bracket-spacing": [2,"never",{}],
+    "brace-style": [2,"1tbs",{"allowSingleLine":true}],
+    "comma-spacing": [2,{"before":false,"after":true}],
+    "no-multiple-empty-lines": [2,{"max":1}],
+    "no-trailing-spaces": 2,
+    "object-curly-spacing": [2,"always",{}],
+    "quotes": [2,"single"],
+    "import/no-namespace": 0
+  }
+}
