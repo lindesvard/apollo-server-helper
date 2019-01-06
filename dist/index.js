@@ -13,6 +13,12 @@ var _fs = require('fs');
 
 var _path = require('path');
 
+var _capitalizeFirstLetter = require('./capitalizeFirstLetter');
+
+var _capitalizeFirstLetter2 = _interopRequireDefault(_capitalizeFirstLetter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 const erase = (str, match) => (0, _lodash.replace)(str, match, '');
 
 const generateResolvers = exports.generateResolvers = dir => (0, _fs.readdirSync)(dir).reduce((acc, file) => {
@@ -45,7 +51,7 @@ const generateResolvers = exports.generateResolvers = dir => (0, _fs.readdirSync
   }
 
   return _extends({}, acc, {
-    [(0, _lodash.capitalize)(erase(file, '.js'))]: module
+    [(0, _capitalizeFirstLetter2.default)(erase(file, '.js'))]: module
   });
 }, {
   Mutation: {},

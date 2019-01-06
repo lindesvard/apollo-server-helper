@@ -1,6 +1,7 @@
-import { map, merge, endsWith, replace, capitalize } from 'lodash'
+import { map, merge, endsWith, replace } from 'lodash'
 import { readdirSync } from 'fs'
 import { resolve } from 'path'
+import capitalizeFirstLetter from './capitalizeFirstLetter'
 
 const erase = (str, match) => replace(str, match, '')
 
@@ -42,7 +43,7 @@ export const generateResolvers = dir =>
 
       return {
         ...acc,
-        [capitalize(erase(file, '.js'))]: module,
+        [capitalizeFirstLetter(erase(file, '.js'))]: module,
       }
     },
     {
